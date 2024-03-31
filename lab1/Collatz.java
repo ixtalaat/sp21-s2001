@@ -3,14 +3,21 @@
  */
 public class Collatz {
 
-    /** Buggy implementation of nextNumber! */
+    /**
+     * Calculates the next number in the Collatz sequence based on the current number.
+     * If the current number is even, the next number is n/2. If it's odd, the next number is 3n + 1.
+     * If the current number is 1, the sequence is over.
+     *
+     * @param n the current number in the Collatz sequence
+     * @return the next number in the sequence
+     */
     public static int nextNumber(int n) {
-        if (n  == 128) {
+        if (n  == 1) {
             return 1;
-        } else if (n == 5) {
+        } else if (n % 2 == 1) {
             return 3 * n + 1;
         } else {
-            return n * 2;
+            return n / 2;
         }
     }
 
